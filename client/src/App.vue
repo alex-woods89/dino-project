@@ -17,7 +17,7 @@ export default {
    data(){
      return {
        favourites: [],
-       selectedDinosaur:null,
+       selectedDinosaur: null,
        dinosaurs: []
      }
    },

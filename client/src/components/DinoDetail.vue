@@ -3,7 +3,7 @@
       <h3>(dinosaur.name}}</h3>
       <li>{{dinosaur.diet}}</li>
 
-      <button v-on:click="addFavourite"> Add to Favourites</button>
+      <button v-on:click="addFavourite">Add to Favourites</button>
   </div>
 </template>
 
