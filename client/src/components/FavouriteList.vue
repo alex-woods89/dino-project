@@ -1,7 +1,8 @@
 <template>
 <div>
   <h3>Your favourite dinosaurs</h3>
-  <fav-list-item>
+  <fav-list-item
+  v-for="favourite in favourites" :favourite="favourite" :key="favourite.id"> 
   </fav-list-item>
 </div>
 </template>
