@@ -21,7 +21,7 @@ export default {
      "favourite-list": FavouriteList
     },
     mounted(){
-      fetch('http://dinosaurpictures.org/api/category/all')
+      fetch('http://localhost:3000/dinosaurs')
       .then(res => res.json())
       .then(dinosaurs => this.dinosaurs = dinosaurs)
     }
