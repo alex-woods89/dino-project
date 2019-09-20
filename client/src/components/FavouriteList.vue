@@ -1,8 +1,5 @@
 <template>
-  <fav-list-item 
-  v-for="favourite in favourites" 
-  :favourite="favourite" 
-  :key="favourite.id">
+  <fav-list-item>
   </fav-list-item>
 </template>
 

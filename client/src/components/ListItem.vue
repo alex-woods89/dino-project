@@ -1,5 +1,5 @@
 <template>
-  <li v-oon:click="handleClick">{{dinosaur}}</li>
+  <li v-on:click="handleClick">{{dinosaur}}</li>
 </template>
 
 <script>
