@@ -9,6 +9,8 @@
 <script>
 import DinoList from './components/DinoList'
 import FavouriteList from './components/FavouriteList'
+import {eventBus} from './main'
+
 
 export default {
   name: "app",
@@ -26,6 +28,14 @@ export default {
       fetch('http://localhost:3000/dinosaurs')
       .then(res => res.json())
       .then(dinosaurs => this.dinosaurs = dinosaurs)
+
+      eventBus.$on("favourite-removed", dinosaur => this.removeFavourite(dinosaur))
+    },
+    methods: {
+           removeFavourite: function(dinosaur) {
+       const index = this.favourites.indexOf(dinosaur)
+       this.favourites.splice(index, 1)}
+
     }
   }
   
