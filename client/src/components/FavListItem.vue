@@ -1,6 +1,6 @@
 <template>
   <li>
-      {{dinosaur.name}}  
+      {{favourite}}  
   </li>
 </template>
 

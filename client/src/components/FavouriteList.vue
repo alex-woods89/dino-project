@@ -1,6 +1,9 @@
 <template>
+<div>
+  <h3>Your favourite dinosaurs</h3>
   <fav-list-item>
   </fav-list-item>
+</div>
 </template>
 
 <script>
