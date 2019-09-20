@@ -17,6 +17,7 @@ export default {
    data(){
      return {
        favourites: [],
+       selectedDinosaur:null,
        dinosaurs: []
      }
    },
@@ -30,11 +31,21 @@ export default {
       .then(dinosaurs => this.dinosaurs = dinosaurs)
 
       eventBus.$on("favourite-removed", dinosaur => this.removeFavourite(dinosaur))
+      eventBus.$on("favourite-added", dinosaur => this.addFavourite(dinosaur))
     },
     methods: {
            removeFavourite: function(dinosaur) {
        const index = this.favourites.indexOf(dinosaur)
-       this.favourites.splice(index, 1)}
+       this.favourites.splice(index, 1)
+       },
+            isDinosaurAFavourite: function(dinosaur){
+       const idOfFavourites = (this.favourites.map(favourite => favourite.id))
+       return idOfFavourites.includes(dinosaur.id)
+       },
+            addFavourite: function(dinosaur){
+       const idOfFavourites = (this.favourites.map(favourite => favourite.id))
+       if (!this.isDinosaurAFavourite(dinosaur)) this.favourites.push(dinosaur)  
+       }
 
     }
   }
