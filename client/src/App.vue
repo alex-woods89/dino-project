@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <h3>Apposaurus</h3>
+    <dinosaur-list :dinosaurs="dinosaurs"></dinosaur-list>
+    <favourite-list :favourites="favourites"></favourite-list>
   </div>
 </template>
 
