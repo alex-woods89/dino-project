@@ -1,15 +1,32 @@
 <template>
   <div id="app">
- 
+    <h3>Apposaurus</h3>
   </div>
 </template>
 
 <script>
-
+import DinoList from './components/DinoList'
+import FavouriteList from './components/FavouriteList'
 
 export default {
+  name: "app",
+   data(){
+     return {
+       favourites: [],
+       dinosaurs: []
+     }
+   },
+   components: {
+     "dinosaur-list": DinoList,
+     "favourite-list": FavouriteList
+    },
+    mounted(){
+      fetch('http://dinosaurpictures.org/api/category/all')
+      .then(res => res.json())
+      .then(dinosaurs => this.dinosaurs = dinosaurs)
+    }
+  }
   
-}
 </script>
 
 <style>
