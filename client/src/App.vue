@@ -26,7 +26,7 @@ export default {
      "favourite-list": FavouriteList
     },
     mounted(){
-      fetch('http://localhost:3000/dinosaurs')
+      fetch('http://localhost:3000/')
       .then(res => res.json())
       .then(dinosaurs => this.dinosaurs = dinosaurs)
 
@@ -44,12 +44,12 @@ export default {
        },
             addFavourite: function(dinosaur){
        const idOfFavourites = (this.favourites.map(favourite => favourite.id))
-       if (!this.isDinosaurAFavourite(dinosaur)) this.favourites.push(dinosaur)  
+       if (!this.isDinosaurAFavourite(dinosaur)) this.favourites.push(dinosaur)
        }
 
     }
   }
-  
+
 </script>
 
 <style>

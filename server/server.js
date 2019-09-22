@@ -6,11 +6,11 @@ const fetch = require('node-fetch');
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use('coin-data', (req, res) => {
+app.use('/', (req, res) => {
   const url = 'http://dinosaurpictures.org/api/category/all';
   fetch(url)
     .then(jsonData => jsonData.json())
-    .then(data => console.log((data));)
+    .then(data => res.json(data));
 });
 
 const MongoClient = require('mongodb').MongoClient;
