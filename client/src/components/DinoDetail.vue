@@ -1,13 +1,16 @@
 <template>
   <div>
-      <h3>(dinosaur.name}}</h3>
-      <li>{{dinosaur.diet}}</li>
+    <p>test</p>
+      <h3>{{dinosaur}}</h3>
+      <li>{{dinosaur}}</li>
 
       <button v-on:click="addFavourite">Add to Favourites</button>
   </div>
 </template>
 
 <script>
+import { eventBus } from '../main'
+
 export default {
     name: 'dinosaur-detail',
     props: ['dinosaur'],

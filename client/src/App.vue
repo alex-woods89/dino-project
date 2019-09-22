@@ -9,6 +9,7 @@
 <script>
 import DinoList from './components/DinoList'
 import FavouriteList from './components/FavouriteList'
+import DinoDetail from './components/DinoDetail'
 import {eventBus} from './main'
 
 
@@ -28,7 +29,11 @@ export default {
     mounted(){
       fetch('http://localhost:3000/')
       .then(res => res.json())
-      .then(dinosaurs => this.dinosaurs = dinosaurs)
+      .then(dinosaurs => this.dinosaurs = dinosaurs);
+
+      fetch('http://localhost:3000/dinosaur')
+      .then(res => res.json())
+      .then(dinosaur => this.dinosaur = dinosaur);
 
       eventBus.$on("favourite-removed", dinosaur => this.removeFavourite(dinosaur))
       eventBus.$on("favourite-added", dinosaur => this.addFavourite(dinosaur))

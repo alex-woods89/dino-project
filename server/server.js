@@ -6,11 +6,22 @@ const fetch = require('node-fetch');
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use('/', (req, res) => {
-  const url = 'http://dinosaurpictures.org/api/category/all';
+
+// app.use('/', (req, res) => {
+//   const url = 'http://dinosaurpictures.org/api/category/all';
+//   fetch(url)
+//     .then(jsonData => jsonData.json())
+//     .then(data => res.json(data));
+// });
+
+app.use('/dinosaur/:name', (req, res) => {
+  const name = req.params.name;
+  // const url = 'http://dinosaurpictures.org/api/dinosaur/Kol';
+  const url = `http://dinosaurpictures.org/api/dinosaur/${name}`;
   fetch(url)
     .then(jsonData => jsonData.json())
-    .then(data => res.json(data));
+    // .then(data => res.json(data));
+    .then(data => console.log(data));
 });
 
 const MongoClient = require('mongodb').MongoClient;

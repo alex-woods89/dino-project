@@ -42,6 +42,16 @@ const createRouter = function (collection) {
         });
     });
 
+    // router.get('/dinosaur/:name', (req, res) => {
+    //   const name = req.params.name;
+    //   // const url = 'http://dinosaurpictures.org/api/dinosaur/Kol';
+    //   const url = `http://dinosaurpictures.org/api/dinosaur/${name}`;
+    //   fetch(url)
+    //     .then(jsonData => jsonData.json())
+    //     // .then(data => res.json(data));
+    //     .then(data => console.log(data));
+    // });
+
     return router;
 };
 
