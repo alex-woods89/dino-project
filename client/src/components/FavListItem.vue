@@ -1,7 +1,7 @@
 <template>
 
   <li>
-      {{favourite.name}}  
+      {{favourite.name}}
       <button v-on:click="removeFavourite">Remove Favourite</button>
   </li>
 
@@ -14,7 +14,7 @@ export default {
 props: ["favourite"],
   methods: {
       removeFavourite: function(){
-          eventBus.$emit("favourite-removed", this.dinosaur)
+          eventBus.$emit("favourite-removed", this.favourite._id)
       }
   }
 }
