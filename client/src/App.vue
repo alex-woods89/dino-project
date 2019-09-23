@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <h3>Apposaurus</h3>
+    <favourite-list :favourites="favourites"></favourite-list>
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
     <dinosaur-list :dinosaurs="dinosaurs"></dinosaur-list>
-    <favourite-list :favourites="favourites"></favourite-list>
+
   </div>
 </template>
 
@@ -33,9 +34,7 @@ export default {
       .then(res => res.json())
       .then(dinosaurs => this.dinosaurs = dinosaurs);
 
-      // fetch('http://localhost:3000/dinosaur')
-      // .then(res => res.json())
-      // .then(dinosaur => this.dinosaur = dinosaur);
+
 
       eventBus.$on("favourite-removed", dinosaur => this.removeFavourite(dinosaur))
       eventBus.$on("favourite-added", dinosaur => this.addFavourite(dinosaur))
@@ -53,6 +52,13 @@ export default {
             addFavourite: function(dinosaur){
        const idOfFavourites = (this.favourites.map(favourite => favourite.id))
        if (!this.isDinosaurAFavourite(dinosaur)) this.favourites.push(dinosaur)
+     },
+     displayDinoDetail: function(dinosaur){
+       fetch(`http://localhost:3000/dinosaur/${dinosaur}`)
+       .then(res => res.json())
+       .then(dinosaur => this.dinosaur = dinosaur);
+       eventBus.$on('dino-detail', dinosaur => (this.selectedDinosaur = dinosaur))
+
      }
     }
   }
