@@ -22,6 +22,7 @@ export default {
        dinosaurs: []
      }
    },
+   props: ['dinosaur'],
    components: {
      "dinosaur-list": DinoList,
      "favourite-list": FavouriteList
@@ -31,9 +32,7 @@ export default {
       .then(res => res.json())
       .then(dinosaurs => this.dinosaurs = dinosaurs);
 
-      fetch('http://localhost:3000/dinosaur')
-      .then(res => res.json())
-      .then(dinosaur => this.dinosaur = dinosaur);
+
 
       eventBus.$on("favourite-removed", dinosaur => this.removeFavourite(dinosaur))
       eventBus.$on("favourite-added", dinosaur => this.addFavourite(dinosaur))
@@ -50,8 +49,16 @@ export default {
             addFavourite: function(dinosaur){
        const idOfFavourites = (this.favourites.map(favourite => favourite.id))
        if (!this.isDinosaurAFavourite(dinosaur)) this.favourites.push(dinosaur)
-       }
+       },
 
+       fetchDino: function(dinosaur) {
+       const dinoUrl = 'http://localhost:3000/dinosaur/' + dinosaur.name
+       fetch(dinoUrl)
+       .then(res => res.json())
+       .then(dinosaur => this.dinosaur = dinosaur);
+
+       eventBus.$on("dinosaur-selected", dinosaur => this.setSelected(dinosaur))
+     }
     }
   }
 
