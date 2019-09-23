@@ -11,6 +11,7 @@
 import DinoList from './components/DinoList'
 import FavouriteList from './components/FavouriteList'
 import DinoDetail from './components/DinoDetail'
+import DinoService from './Services/DinoService'
 import {eventBus} from './main'
 
 
@@ -37,6 +38,10 @@ export default {
 
       eventBus.$on("favourite-removed", dinosaur => this.removeFavourite(dinosaur))
       eventBus.$on("favourite-added", dinosaur => this.addFavourite(dinosaur))
+
+
+
+
       eventBus.$on('dinosaur-selected', dinosaur => this.displayDinoDetail(dinosaur))
     },
     methods: {
@@ -49,8 +54,6 @@ export default {
        return idOfFavourites.includes(dinosaur.id)
        },
             addFavourite: function(dinosaur){
-      //  const idOfFavourites = (this.favourites.map(favourite => favourite.id))
-      //  if (!this.isDinosaurAFavourite(dinosaur)) 
       this.favourites.push(dinosaur)
      },
      displayDinoDetail: function(dinosaurName){
