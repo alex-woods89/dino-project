@@ -6,11 +6,13 @@ export default {
         .then(res => res.json())
     },
     postFavoriteDinosaur(payload){
+        console.log(payload)
         return fetch(baseURL, {
             method: "POST",
             body: JSON.stringify(payload),
             headers: { 'Content-Type': 'application/json'}
         }). then(res => res.json())
+        
     },
     deleteFavoriteDinosaur(dinosaur){
         return fetch(baseURL + dinosaur, {

@@ -37,8 +37,12 @@ export default {
 
 
       eventBus.$on("favourite-removed", dinosaur => this.removeFavourite(dinosaur))
-      eventBus.$on("favourite-added", dinosaur => this.addFavourite(dinosaur))
-
+      eventBus.$on("favourite-added", (favourite) => {
+        DinoService.postFavoriteDinosaur(favourite)
+        .then(favourite => this.favourites.push(favourite.name))
+        console.log(favourite.name)
+      });
+       
 
 
 
