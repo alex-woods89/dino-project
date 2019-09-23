@@ -48,8 +48,9 @@ export default {
        return idOfFavourites.includes(dinosaur.id)
        },
             addFavourite: function(dinosaur){
-       const idOfFavourites = (this.favourites.map(favourite => favourite.id))
-       if (!this.isDinosaurAFavourite(dinosaur)) this.favourites.push(dinosaur)
+      //  const idOfFavourites = (this.favourites.map(favourite => favourite.id))
+      //  if (!this.isDinosaurAFavourite(dinosaur)) 
+      this.favourites.push(dinosaur)
      },
      displayDinoDetail: function(dinosaurName){
        fetch(`http://localhost:3000/dinosaur/${dinosaurName}`)
