@@ -1,6 +1,6 @@
 <template>
   <div class="">
-      <h3>All the dinosaurs</h3>
+      <h3 class="dino-list-h3">Choose a Dino to Find Out More About It</h3>
       <div class="grid">
           <list-item v-for="(dinosaur, index) in dinosaurs" :dinosaur="dinosaur" :key="index"></list-item>
       </div>
@@ -27,6 +27,11 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.dino-list-h3 {
+  padding: 30px;
 }
 
 </style>

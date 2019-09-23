@@ -22,5 +22,14 @@ props: ["favourite"],
 </script>
 
 <style>
+li {
+  padding: 10px;
+}
 
+button {
+  background-color: #ffad33;
+  box-shadow: 3px 3px #888;
+  border-radius: 10px;
+  color: white;
+}
 </style>

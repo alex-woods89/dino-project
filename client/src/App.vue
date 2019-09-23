@@ -1,10 +1,18 @@
 <template>
   <div id="app">
+
+      <nav>
+        <ul>
+          <h3>Apposaurus</h3>
+          <li><a href="#dino-list">Explore Dinos</a></li>
+          <li> <a href="#fav-list">Favourite Dinos</a></li>
+        </ul>
+      </nav>
     <!-- <img src="../public/dino-background.jpg" alt=""> -->
-    <h3>Apposaurus</h3>
-    <favourite-list :favourites="favourites"></favourite-list>
+
+    <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
-    <dinosaur-list :dinosaurs="dinosaurs"></dinosaur-list>
+    <dinosaur-list id="dino-list" :dinosaurs="dinosaurs"></dinosaur-list>
   </div>
 </template>
 
@@ -88,5 +96,29 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+li {
+  list-style-type: none;
+}
 
+nav li {
+  display: inline;
+  margin-right: 10px;
+}
+
+#fav-list {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  padding: 40px;
+}
+
+h3 {
+  display: inline;
+  margin-right: 60px;
+}
+
+#dino-list {
+  margin-top: 50px;
+}
 </style>
