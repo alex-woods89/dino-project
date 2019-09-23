@@ -28,16 +28,16 @@ app.use('/', (req, res) => {
     .then(data => res.json(data));
 });
 
-// const MongoClient = require('mongodb').MongoClient;
-// const createRouter = require('./helpers/create_router.js');
-//
-// MongoClient.connect('mongodb://localhost:27017')
-//   .then((client) => {
-//     const db = client.db('dino_favorites');
-//     const dinoFavCollection = db.collection('favs');
-//     app.use('/api/favs', createRouter(dinoFavCollection));
-//   })
-//   .catch(console.error);
+const MongoClient = require('mongodb').MongoClient;
+const createRouter = require('./helpers/create_router.js');
+
+MongoClient.connect('mongodb://localhost:27017')
+  .then((client) => {
+    const db = client.db('dino_favorites');
+    const dinoFavCollection = db.collection('dinosaur');
+    app.use('/api/dinosaur', createRouter(dinoFavCollection));
+  })
+  .catch(console.error);
 
 app.listen(3000, function() {
   console.log(`Dino server running on port ${this.address().port}`);
