@@ -4,7 +4,6 @@
     <favourite-list :favourites="favourites"></favourite-list>
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
     <dinosaur-list :dinosaurs="dinosaurs"></dinosaur-list>
-
   </div>
 </template>
 
@@ -57,8 +56,6 @@ export default {
        fetch(`http://localhost:3000/dinosaur/${dinosaurName}`)
        .then(res => res.json())
        .then(dinosaur => this.selectedDinosaur = dinosaur);
-       // eventBus.$on('dino-detail', dinosaur => (this.selectedDinosaur = dinosaur))
-
      }
     }
   }

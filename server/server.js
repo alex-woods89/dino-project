@@ -22,7 +22,7 @@ app.use('/dinosaur/:name', (req, res) => {
 
 app.use('/', (req, res) => {
   console.log("in / route");
-  const url = 'http://dinosaurpictures.org/api/category/all';
+  const url = 'http://dinosaurpictures.org/api/category/europe';
   fetch(url)
     .then(jsonData => jsonData.json())
     .then(data => res.json(data));

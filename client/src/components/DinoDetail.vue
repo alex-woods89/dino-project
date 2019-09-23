@@ -1,11 +1,11 @@
 <template>
   <div>
-    <p>test</p>
       <h3>{{dinosaur.name}}</h3>
       <li>{{dinosaur.eats}}</li>
       <li>{{dinosaur.period}}</li>
+      <li>{{dinosaur.regions[0]}}</li>
       <img :src="dinosaur.pics[0].url" height="250">
-
+      <br>
       <button v-on:click="addFavourite">Add to Favourites</button>
   </div>
 </template>

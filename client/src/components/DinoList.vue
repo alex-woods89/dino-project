@@ -1,6 +1,5 @@
 <template>
   <div>
-  
       <h3>All the dinosaurs</h3>
       <ul>
           <list-item v-for="(dinosaur, index) in dinosaurs" :dinosaur="dinosaur" :key="index"></list-item>
