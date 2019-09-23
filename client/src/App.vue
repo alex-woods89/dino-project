@@ -38,7 +38,7 @@ export default {
 
       eventBus.$on("favourite-removed", dinosaur => this.removeFavourite(dinosaur))
       eventBus.$on("favourite-added", dinosaur => this.addFavourite(dinosaur))
-      eventBus.$on('dinosaur-selected', dinosaur => (this.selectedDinosaur = dinosaur))
+      eventBus.$on('dinosaur-selected', dinosaur => this.displayDinoDetail(dinosaur))
     },
     methods: {
       removeFavourite: function(dinosaur) {
@@ -53,11 +53,11 @@ export default {
        const idOfFavourites = (this.favourites.map(favourite => favourite.id))
        if (!this.isDinosaurAFavourite(dinosaur)) this.favourites.push(dinosaur)
      },
-     displayDinoDetail: function(dinosaur){
-       fetch(`http://localhost:3000/dinosaur/${dinosaur}`)
+     displayDinoDetail: function(dinosaurName){
+       fetch(`http://localhost:3000/dinosaur/${dinosaurName}`)
        .then(res => res.json())
-       .then(dinosaur => this.dinosaur = dinosaur);
-       eventBus.$on('dino-detail', dinosaur => (this.selectedDinosaur = dinosaur))
+       .then(dinosaur => this.selectedDinosaur = dinosaur);
+       // eventBus.$on('dino-detail', dinosaur => (this.selectedDinosaur = dinosaur))
 
      }
     }
