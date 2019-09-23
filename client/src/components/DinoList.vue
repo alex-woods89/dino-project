@@ -1,6 +1,6 @@
 <template>
   <div>
-  <dino-detail></dino-detail>
+  
       <h3>All the dinosaurs</h3>
       <ul>
           <list-item v-for="(dinosaur, index) in dinosaurs" :dinosaur="dinosaur" :key="index"></list-item>
@@ -12,6 +12,7 @@
 import { eventBus } from '../main'
 import ListItem from './ListItem'
 import DinoDetail from './DinoDetail'
+
 export default {
   name: "dino-list",
   props: ["dinosaurs"],

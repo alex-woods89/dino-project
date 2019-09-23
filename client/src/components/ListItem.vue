@@ -4,6 +4,7 @@
 
 <script>
 import {eventBus} from '../main'
+
 export default {
    name: "list-item",
    props: ['dinosaur'],
