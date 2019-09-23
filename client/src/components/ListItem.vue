@@ -1,5 +1,7 @@
 <template>
-  <li v-on:click="handleClick">{{dinosaur}}</li>
+  <div class="grid-item">
+    <p v-on:click="handleClick">{{dinosaur}}</p>
+  </div>
 </template>
 
 <script>
@@ -17,5 +19,10 @@ export default {
 </script>
 
 <style>
-
+.grid-item {
+  width: 30%;
+  background-color: green;
+  margin-bottom: 20px;
+  padding: 25px;
+}
 </style>

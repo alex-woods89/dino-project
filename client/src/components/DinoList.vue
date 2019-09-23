@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="">
       <h3>All the dinosaurs</h3>
-      <ul>
+      <div class="grid">
           <list-item v-for="(dinosaur, index) in dinosaurs" :dinosaur="dinosaur" :key="index"></list-item>
-      </ul>
+      </div>
   </div>
 </template>
 
@@ -23,5 +23,12 @@ export default {
 </script>
 
 <style>
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+
 
 </style>
