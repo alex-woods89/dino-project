@@ -1,7 +1,7 @@
 <template>
   <div>
       <h3>{{dinosaur.name}}</h3>
-      <li>{{dinosaur.eats}}</li>
+      <li v-if="dinosaur.eats">{{dinosaur.eats}}</li>
       <li>{{dinosaur.period}}</li>
       <li>{{dinosaur.regions[0]}}</li>
       <img :src="dinosaur.pics[0].url" height="250">

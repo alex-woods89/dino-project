@@ -89,8 +89,4 @@ export default {
   margin-top: 60px;
 }
 
-img {
-  opacity: 0.5;
-  width: 100%;
-}
 </style>
