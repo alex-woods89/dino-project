@@ -1,7 +1,7 @@
 <template>
 
   <li>
-      {{favourite}}  
+      {{favourite.name}}  
       <button v-on:click="removeFavourite">Remove Favourite</button>
   </li>
 

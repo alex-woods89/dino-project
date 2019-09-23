@@ -14,8 +14,8 @@ export default {
         }). then(res => res.json())
 
     },
-    deleteFavoriteDinosaur(dinosaur){
-        return fetch(baseURL + dinosaur, {
+    deleteFavoriteDinosaur(id){
+        return fetch(baseURL + id, {
             method:"DELETE"
         })
     }

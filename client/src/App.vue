@@ -35,7 +35,12 @@ export default {
       .then(res => res.json())
       .then(dinosaurs => this.dinosaurs = dinosaurs);
 
-      eventBus.$on("favourite-removed", dinosaur => this.removeFavourite(dinosaur))
+      eventBus.$on("favourite-removed", id => {
+        DinoService.deleteFavoriteDinosaur(id)
+        const index = this.favourites.indexOf(favourite => favourite.id === id)
+        this.favourites.splice(index, 1);
+      })
+
       eventBus.$on("favourite-added", (favourite) => {
         DinoService.postFavoriteDinosaur(favourite)
         .then(resFavourite => {
@@ -44,10 +49,10 @@ export default {
         })
       });
 
-
-
-
       eventBus.$on('dinosaur-selected', dinosaur => this.displayDinoDetail(dinosaur))
+
+      DinoService.getFavoriteDinosaurs()
+      .then(favourites => this.favourites = favourites)
     },
     methods: {
       removeFavourite: function(dinosaur) {

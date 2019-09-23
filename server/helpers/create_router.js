@@ -42,15 +42,19 @@ const createRouter = function (collection) {
         });
     });
 
-    // router.get('/dinosaur/:name', (req, res) => {
-    //   const name = req.params.name;
-    //   // const url = 'http://dinosaurpictures.org/api/dinosaur/Kol';
-    //   const url = `http://dinosaurpictures.org/api/dinosaur/${name}`;
-    //   fetch(url)
-    //     .then(jsonData => jsonData.json())
-    //     // .then(data => res.json(data));
-    //     .then(data => console.log(data));
-    // });
+    router.delete('/:id', (req, res) => {
+      const id = req.params.id;
+      collection
+      .deleteOne({_id: ObjectId(id)})
+      .then(() => collection.find().toArray())
+      .then((docs) => res.json(docs))
+      .catch((err) => {
+          console.error(err);
+          res.status(500);
+          res.json({status: 500, error: err});
+      });
+    });
+
 
     return router;
 };
