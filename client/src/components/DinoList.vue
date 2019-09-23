@@ -14,7 +14,7 @@ import DinoDetail from './DinoDetail'
 
 export default {
   name: "dino-list",
-  props: ["dinosaurs"],
+  props: ["dinosaurs", "dinosaur"],
   components: {
       "list-item": ListItem,
       "dino-detail": DinoDetail
@@ -28,7 +28,5 @@ export default {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-
-
 
 </style>

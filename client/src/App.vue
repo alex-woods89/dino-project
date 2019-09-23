@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- <img src="../public/dino-background.jpg" alt=""> -->
     <h3>Apposaurus</h3>
     <favourite-list :favourites="favourites"></favourite-list>
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
@@ -32,8 +33,6 @@ export default {
       fetch('http://localhost:3000/')
       .then(res => res.json())
       .then(dinosaurs => this.dinosaurs = dinosaurs);
-
-
 
       eventBus.$on("favourite-removed", dinosaur => this.removeFavourite(dinosaur))
       eventBus.$on("favourite-added", dinosaur => this.addFavourite(dinosaur))
@@ -70,5 +69,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+img {
+  opacity: 0.5;
+  width: 100%;
 }
 </style>

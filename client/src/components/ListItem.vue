@@ -1,6 +1,6 @@
 <template>
   <div class="grid-item">
-    <p v-on:click="handleClick">{{dinosaur}}</p>
+    <h3 v-on:click="handleClick">{{dinosaur}}</h3>
   </div>
 </template>
 
@@ -20,9 +20,11 @@ export default {
 
 <style>
 .grid-item {
-  width: 30%;
+  width: 12%;
   background-color: green;
-  margin-bottom: 20px;
+  margin: 20px;
   padding: 25px;
+  border-radius: 8px;
+  color: white;
 }
 </style>
