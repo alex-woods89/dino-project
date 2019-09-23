@@ -31,17 +31,19 @@ export default {
      "dino-detail": DinoDetail
     },
     mounted(){
-      fetch('http://localhost:3000/')
+      fetch('http://localhost:3000/api/dinosaurs')
       .then(res => res.json())
       .then(dinosaurs => this.dinosaurs = dinosaurs);
 
       eventBus.$on("favourite-removed", dinosaur => this.removeFavourite(dinosaur))
       eventBus.$on("favourite-added", (favourite) => {
         DinoService.postFavoriteDinosaur(favourite)
-        .then(favourite => this.favourites.push(favourite.name))
-        console.log(favourite.name)
+        .then(resFavourite => {
+          console.log(resFavourite)
+          this.favourites.push(favourite.name)
+        })
       });
-       
+
 
 
 
@@ -49,8 +51,8 @@ export default {
     },
     methods: {
       removeFavourite: function(dinosaur) {
-      const index = this.favourites.indexOf(dinosaur)
-      this.favourites.splice(index, 1)
+        const index = this.favourites.indexOf(dinosaur)
+        this.favourites.splice(index, 1)
       },
             isDinosaurAFavourite: function(dinosaur){
        const idOfFavourites = (this.favourites.map(favourite => favourite.id))
@@ -60,7 +62,7 @@ export default {
       this.favourites.push(dinosaur)
      },
      displayDinoDetail: function(dinosaurName){
-       fetch(`http://localhost:3000/dinosaur/${dinosaurName}`)
+       fetch(`http://localhost:3000/api/dinosaurs/${dinosaurName}`)
        .then(res => res.json())
        .then(dinosaur => this.selectedDinosaur = dinosaur);
      }
