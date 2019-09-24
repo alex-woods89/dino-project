@@ -9,6 +9,8 @@
       <h3>Apposaurus</h3>
       <br>
       <br>
+    <build-your-dino></build-your-dino>
+    <br>
     <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
     <br>
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
@@ -22,6 +24,7 @@ import DinoList from './components/DinoList'
 import FavouriteList from './components/FavouriteList'
 import DinoDetail from './components/DinoDetail'
 import DinoService from './Services/DinoService'
+import BuildYourDino from './components/BuildYourDino'
 import {eventBus} from './main'
 
 export default {
@@ -37,7 +40,8 @@ export default {
    components: {
      "dinosaur-list": DinoList,
      "favourite-list": FavouriteList,
-     "dino-detail": DinoDetail
+     "dino-detail": DinoDetail,
+     "build-your-dino": BuildYourDino
    },
    computed: {
      filteredDinosaurs: function () {
