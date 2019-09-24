@@ -21,7 +21,7 @@ export default {
 <style>
 .grid-item {
   width: 12%;
-  background-color: green;
+  background-color: #ffad33;
   margin: 20px;
   padding: 25px;
   border-radius: 8px;

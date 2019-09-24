@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1>Apposaurus</h1>
       <nav>
         <ul>
           <li><a href="#dino-list">Explore Dinos</a></li>
@@ -7,7 +8,7 @@
           <li> <a href="#build-your-dino">Build Your Dino</a></li>
         </ul>
       </nav>
-      <h3>Apposaurus</h3>
+      
       <br>
       <br>
 
@@ -123,13 +124,18 @@ li {
 nav li {
   display: inline;
   margin-right: 10px;
+   background-color: #ffad33;
+  box-shadow: 3px 3px #888;
+  border-radius: 10px;
+  color: white;
 }
 
 
 
-h3 {
+h1 {
   display: inline;
-  margin-right: 60px;
+  
+  font-size: 400%
 }
 
 #dino-list {

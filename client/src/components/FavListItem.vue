@@ -4,7 +4,7 @@
     <li v-on:click="handleClick"> {{favourite.name}} </li>
     <img :src="favourite.pics[0].url" height="50">
   <li>
-      <button v-on:click="removeFavourite">Remove Favourite</button>
+      <button v-on:click="removeFavourite">Delete Favourite</button>
   </li>
   </div>
 </template>
