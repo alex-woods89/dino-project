@@ -2,7 +2,7 @@
   <div id="app">
       <nav>
         <ul>
-          
+
           <li><a href="#dino-list">Explore Dinos</a></li>
           <li> <a href="#fav-list">Favourite Dinos</a></li>
           <dino-search :dinosaurs="dinosaurs"></dino-search>
@@ -54,7 +54,7 @@ export default {
         .then(() => {
           const index = this.favourites.findIndex(favourite => favourite._id === id)
           this.favourites.splice(index, 1)
-          
+
         })
       })
 
@@ -106,7 +106,7 @@ export default {
   color:white;
   background-color: rgba(255, 255, 255, 0.3);
   background-image: url("../public/dino-background-copy.jpg");
-  
+   background-attachment: fixed;
   /* background-color: antiquewhite; */
 }
 li {
