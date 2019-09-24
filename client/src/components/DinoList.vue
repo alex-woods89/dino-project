@@ -31,6 +31,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 20px;
+
 }
 
 .dino-list-h3 {

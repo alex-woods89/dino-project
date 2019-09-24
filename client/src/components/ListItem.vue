@@ -27,5 +27,6 @@ export default {
   border-radius: 8px;
   color: white;
   box-shadow: 3px 3px #888;
+    cursor: pointer;
 }
 </style>

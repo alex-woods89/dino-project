@@ -127,10 +127,12 @@ nav li {
    background-color: #ffad33;
   box-shadow: 3px 3px #888;
   border-radius: 10px;
-  color: white;
+  color: white
 }
 
-
+a {
+  text-decoration: none;
+}
 
 h1 {
   display: inline;
