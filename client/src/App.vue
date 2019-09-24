@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-
       <nav>
         <ul>
           <h3>Apposaurus</h3>
           <li><a href="#dino-list">Explore Dinos</a></li>
           <li> <a href="#fav-list">Favourite Dinos</a></li>
+          <dino-search :dinosaurs="dinosaurs"></dino-search>
         </ul>
       </nav>
     <!-- <img src="../public/dino-background.jpg" alt=""> -->
@@ -21,8 +21,8 @@ import DinoList from './components/DinoList'
 import FavouriteList from './components/FavouriteList'
 import DinoDetail from './components/DinoDetail'
 import DinoService from './Services/DinoService'
+import DinoSearch from './components/DinoSearch'
 import {eventBus} from './main'
-
 
 export default {
   name: "app",
@@ -36,7 +36,8 @@ export default {
    components: {
      "dinosaur-list": DinoList,
      "favourite-list": FavouriteList,
-     "dino-detail": DinoDetail
+     "dino-detail": DinoDetail,
+     "dino-search": DinoSearch
     },
     mounted(){
       fetch('http://localhost:3000/api/dinosaurs')
@@ -62,7 +63,11 @@ export default {
       eventBus.$on('dinosaur-selected', dinosaur => this.displayDinoDetail(dinosaur));
 
       DinoService.getFavoriteDinosaurs()
-      .then(favourites => this.favourites = favourites)
+      .then(favourites => this.favourites = favourites);
+
+      eventBus.$on('dino-searched', (dinosaurs) => {
+        this.selectedDinosaur = dinosaur
+      })
 
   },
     methods: {
