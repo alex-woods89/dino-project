@@ -31,7 +31,8 @@ app.use('/api/dinosaurs/:name', (req, res) => {
 
 app.use('/api/dinosaurs', (req, res) => {
   console.log("in / route");
-  const url = 'http://dinosaurpictures.org/api/category/europe';
+  const region = req.params.region
+  const url = `http://dinosaurpictures.org/api/category/${region}`;
   fetch(url)
     .then(jsonData => jsonData.json())
     .then(data => res.json(data));

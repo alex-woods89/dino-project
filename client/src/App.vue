@@ -2,17 +2,15 @@
   <div id="app">
       <nav>
         <ul>
-
           <li><a href="#dino-list">Explore Dinos</a></li>
           <li> <a href="#fav-list">Favourite Dinos</a></li>
-          <dino-search :dinosaurs="dinosaurs"></dino-search>
         </ul>
       </nav>
       <h3>Apposaurus</h3>
       <br>
       <br>
-    <!-- <img src="../public/dino-background.jpg" alt=""> -->
-
+      <build-your-dino />
+    <br>
     <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
     <br>
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
@@ -26,7 +24,8 @@ import DinoList from './components/DinoList'
 import FavouriteList from './components/FavouriteList'
 import DinoDetail from './components/DinoDetail'
 import DinoService from './Services/DinoService'
-import DinoSearch from './components/DinoSearch'
+import BuildYourDino from './components/BuildYourDino'
+
 import {eventBus} from './main'
 
 export default {
@@ -42,7 +41,8 @@ export default {
      "dinosaur-list": DinoList,
      "favourite-list": FavouriteList,
      "dino-detail": DinoDetail,
-     "dino-search": DinoSearch
+     "build-your-dino": BuildYourDino
+
     },
     mounted(){
       fetch('http://localhost:3000/api/dinosaurs')

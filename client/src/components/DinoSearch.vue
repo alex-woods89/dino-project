@@ -18,7 +18,7 @@ export default {
   props: ["dinosaurs"],
   methods: {
     SearchForDino(){
-      let foundDino = this.dinosaurs.find((dinosaur) => {
+      let foundDino = this.dinosaurs.find((selectedDinosaur) => {
         return dinosaur.indexOf(this.search) > -1
       })
       this.selectedDinosaur = foundDino
