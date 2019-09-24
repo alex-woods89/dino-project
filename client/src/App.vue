@@ -98,8 +98,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background-color: antiquewhite;
+  color:white;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-image: url("../public/dino-background-copy.jpg");
+  
+  /* background-color: antiquewhite; */
 }
 li {
   list-style-type: none;
@@ -110,13 +113,7 @@ nav li {
   margin-right: 10px;
 }
 
-/* #fav-list {
-  text-align: left;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-  padding: 40px;
-} */
+
 
 h3 {
   display: inline;
