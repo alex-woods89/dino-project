@@ -19,7 +19,6 @@ export default {
   methods: {
     SearchForDino(){
       let foundDino = this.dinosaurs.find((dinosaur) => {
-        console.log(dinosaurs);
         return dinosaur.indexOf(this.search) > -1
       })
       this.selectedDinosaur = foundDino
