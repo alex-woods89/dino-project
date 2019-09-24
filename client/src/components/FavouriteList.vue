@@ -1,7 +1,7 @@
 <template>
 <div>
   
-  <h3>Your Favourite Dinos</h3>
+  <h2>Your Favourite Dinos</h2>
   <br>
   <br>
   <fav-list-item

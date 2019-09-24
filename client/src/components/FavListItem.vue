@@ -1,6 +1,6 @@
 <template>
 
-  <div class="grid">
+  <div class="favourite-item">
     <li v-on:click="handleClick"> {{favourite.name}} </li>
     <img :src="favourite.pics[0].url" height="50">
   <li>
@@ -37,12 +37,14 @@ button {
   box-shadow: 3px 3px #888;
   border-radius: 10px;
   color: white;
+  font-size: 125%
 }
 
-.grid {
+.favourite-item {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 20px;
+  font-size: 150%;
 }
 </style>

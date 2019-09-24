@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="">
-
+   <h2>Build Your Dino</h2>
   <form class="">
     <div class="form-row">
       <div class="form-col">
