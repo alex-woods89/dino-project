@@ -1,10 +1,12 @@
 <template>
 
+  <div class="grid">
+    <li> {{favourite.name}} </li>
+    <img :src="favourite.pics[0].url" height="50">
   <li>
-      {{favourite.name}}
       <button v-on:click="removeFavourite">Remove Favourite</button>
   </li>
-
+  </div>
 </template>
 
 <script>
@@ -12,10 +14,11 @@ import {eventBus} from '../main'
 
 export default {
 props: ["favourite"],
+       
   methods: {
       removeFavourite: function(){
           eventBus.$emit("favourite-removed", this.favourite._id)
-      }
+      },
   }
 }
 
@@ -31,5 +34,12 @@ button {
   box-shadow: 3px 3px #888;
   border-radius: 10px;
   color: white;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
 </style>

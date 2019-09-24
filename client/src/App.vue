@@ -53,7 +53,7 @@ export default {
         .then(() => {
           const index = this.favourites.findIndex(favourite => favourite._id === id)
           this.favourites.splice(index, 1)
-          console.log(index);
+          
         })
       })
 
