@@ -1,6 +1,6 @@
 <template lang="html">
   <form v-on:submit.prevent class="">
-    <input type="text" v-model="search" placeholder="Search For a Dino" v-on:keyup="SearchForDino">
+    <input type="text" v-model="search" placeholder="Search For a Dino">
   </form>
 </template>
 
@@ -11,18 +11,17 @@ export default {
   name: "dino-search",
   data(){
     return {
-      "search": "",
-      "selectedDinosaur": {}
+      search: ""
     }
   },
-  props: ["dinosaurs"],
+  watch: {
+    search: function (val) {
+      this.searchForDino();
+    }
+  },
   methods: {
-    SearchForDino(){
-      let foundDino = this.dinosaurs.find((dinosaur) => {
-        return dinosaur.indexOf(this.search) > -1
-      })
-      this.selectedDinosaur = foundDino
-      eventBus.$emit('dino-searched', this.selectedDinosaur)
+    searchForDino(){
+      eventBus.$emit('dino-searched', this.search)
     },
   }
 }

@@ -2,22 +2,18 @@
   <div id="app">
       <nav>
         <ul>
-
           <li><a href="#dino-list">Explore Dinos</a></li>
           <li> <a href="#fav-list">Favourite Dinos</a></li>
-          <dino-search :dinosaurs="dinosaurs"></dino-search>
         </ul>
       </nav>
       <h3>Apposaurus</h3>
       <br>
       <br>
-    <!-- <img src="../public/dino-background.jpg" alt=""> -->
-
     <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
     <br>
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
     <br>
-    <dinosaur-list id="dino-list" :dinosaurs="dinosaurs"></dinosaur-list>
+    <dinosaur-list id="dino-list" :dinosaurs="filteredDinosaurs"></dinosaur-list>
   </div>
 </template>
 
@@ -26,7 +22,6 @@ import DinoList from './components/DinoList'
 import FavouriteList from './components/FavouriteList'
 import DinoDetail from './components/DinoDetail'
 import DinoService from './Services/DinoService'
-import DinoSearch from './components/DinoSearch'
 import {eventBus} from './main'
 
 export default {
@@ -35,15 +30,23 @@ export default {
      return {
        favourites: [],
        selectedDinosaur: null,
-       dinosaurs: []
+       dinosaurs: [],
+       searchTerm: ""
      }
    },
    components: {
      "dinosaur-list": DinoList,
      "favourite-list": FavouriteList,
-     "dino-detail": DinoDetail,
-     "dino-search": DinoSearch
-    },
+     "dino-detail": DinoDetail
+   },
+   computed: {
+     filteredDinosaurs: function () {
+       if (!this.searchTerm.length) return this.dinosaurs;
+       return this.dinosaurs
+       .filter(dinosaur => dinosaur.toLowerCase()
+       .includes(this.searchTerm.toLowerCase()));
+     }
+   },
     mounted(){
       fetch('http://localhost:3000/api/dinosaurs')
       .then(res => res.json())
@@ -67,12 +70,10 @@ export default {
 
       eventBus.$on('dinosaur-selected', dinosaur => this.displayDinoDetail(dinosaur));
 
+      eventBus.$on('dino-searched', searchTerm => this.searchTerm = searchTerm)
+
       DinoService.getFavoriteDinosaurs()
       .then(favourites => this.favourites = favourites);
-
-      eventBus.$on('dino-searched', (dinosaurs) => {
-        this.selectedDinosaur = dinosaur
-      })
 
   },
     methods: {
@@ -80,18 +81,18 @@ export default {
         const index = this.favourites.indexOf(dinosaur)
         this.favourites.splice(index, 1)
       },
-            isDinosaurAFavourite: function(dinosaur){
-       const idOfFavourites = (this.favourites.map(favourite => favourite.id))
-       return idOfFavourites.includes(dinosaur.id)
-       },
-            addFavourite: function(dinosaur){
-      this.favourites.push(dinosaur)
-     },
-     displayDinoDetail: function(dinosaurName){
-       fetch(`http://localhost:3000/api/dinosaurs/${dinosaurName}`)
-       .then(res => res.json())
-       .then(dinosaur => this.selectedDinosaur = dinosaur);
-     }
+      isDinosaurAFavourite: function(dinosaur){
+        const idOfFavourites = (this.favourites.map(favourite => favourite.id))
+        return idOfFavourites.includes(dinosaur.id)
+      },
+      addFavourite: function(dinosaur){
+        this.favourites.push(dinosaur)
+      },
+      displayDinoDetail: function(dinosaurName){
+        fetch(`http://localhost:3000/api/dinosaurs/${dinosaurName}`)
+          .then(res => res.json())
+          .then(dinosaur => this.selectedDinosaur = dinosaur);
+      }
     }
   }
 

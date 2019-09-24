@@ -1,6 +1,7 @@
 <template>
   <div class="">
       <h3 class="dino-list-h3">Choose a Dino to Find Out More About It</h3>
+      <dino-search></dino-search>
       <div class="grid">
           <list-item v-for="(dinosaur, index) in dinosaurs" :dinosaur="dinosaur" :key="index"></list-item>
       </div>
@@ -11,13 +12,15 @@
 import { eventBus } from '../main'
 import ListItem from './ListItem'
 import DinoDetail from './DinoDetail'
+import DinoSearch from './DinoSearch'
 
 export default {
   name: "dino-list",
-  props: ["dinosaurs", "dinosaur"],
+  props: ["dinosaurs"],
   components: {
       "list-item": ListItem,
-      "dino-detail": DinoDetail
+      "dino-detail": DinoDetail,
+      "dino-search": DinoSearch
   }
 }
 </script>
