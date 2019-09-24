@@ -3,11 +3,12 @@
 
       <nav>
         <ul>
-          <h3>Apposaurus</h3>
+          
           <li><a href="#dino-list">Explore Dinos</a></li>
           <li> <a href="#fav-list">Favourite Dinos</a></li>
         </ul>
       </nav>
+      <h3>Apposaurus</h3>
     <!-- <img src="../public/dino-background.jpg" alt=""> -->
 
     <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
@@ -94,7 +95,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+ 
+  background-color: antiquewhite;
 }
 li {
   list-style-type: none;
