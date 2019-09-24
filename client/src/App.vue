@@ -9,10 +9,14 @@
         </ul>
       </nav>
       <h3>Apposaurus</h3>
+      <br>
+      <br>
     <!-- <img src="../public/dino-background.jpg" alt=""> -->
 
     <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
+    <br>
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
+    <br>
     <dinosaur-list id="dino-list" :dinosaurs="dinosaurs"></dinosaur-list>
   </div>
 </template>
@@ -95,7 +99,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
- 
   background-color: antiquewhite;
 }
 li {
@@ -107,13 +110,13 @@ nav li {
   margin-right: 10px;
 }
 
-#fav-list {
+/* #fav-list {
   text-align: left;
   margin-left: auto;
   margin-right: auto;
   width: 40%;
   padding: 40px;
-}
+} */
 
 h3 {
   display: inline;
