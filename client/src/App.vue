@@ -4,18 +4,20 @@
         <ul>
           <li><a href="#dino-list">Explore Dinos</a></li>
           <li> <a href="#fav-list">Favourite Dinos</a></li>
+          <li> <a href="#build-your-dino">Build Your Dino</a></li>
         </ul>
       </nav>
       <h3>Apposaurus</h3>
       <br>
       <br>
-    <build-your-dino></build-your-dino>
+
     <br>
     <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
     <br>
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
     <br>
     <dinosaur-list id="dino-list" :dinosaurs="filteredDinosaurs"></dinosaur-list>
+    <build-your-dino id="build-your-dino"></build-your-dino>
   </div>
 </template>
 

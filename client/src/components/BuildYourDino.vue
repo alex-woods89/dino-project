@@ -73,7 +73,7 @@
   </form>
 
   <p>{{name}} is a {{color}} dinosaur.
-    He’s is {{selected}} than a HOUSE and lives in a {{live}}.
+    {{name}} is {{selected}} than a HOUSE and lives in a {{live}}.
     {{name}}  can {{picked}} and likes to eat {{food}}.
     We luv {{name}} the dinosaur.
   </p>
