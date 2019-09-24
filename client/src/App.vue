@@ -2,16 +2,21 @@
   <div id="app">
       <nav>
         <ul>
-          <h3>Apposaurus</h3>
+          
           <li><a href="#dino-list">Explore Dinos</a></li>
           <li> <a href="#fav-list">Favourite Dinos</a></li>
           <dino-search :dinosaurs="dinosaurs"></dino-search>
         </ul>
       </nav>
+      <h3>Apposaurus</h3>
+      <br>
+      <br>
     <!-- <img src="../public/dino-background.jpg" alt=""> -->
 
     <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
+    <br>
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
+    <br>
     <dinosaur-list id="dino-list" :dinosaurs="dinosaurs"></dinosaur-list>
   </div>
 </template>
@@ -49,7 +54,7 @@ export default {
         .then(() => {
           const index = this.favourites.findIndex(favourite => favourite._id === id)
           this.favourites.splice(index, 1)
-          console.log(index);
+          
         })
       })
 
@@ -98,8 +103,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color:white;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-image: url("../public/dino-background-copy.jpg");
+  
+  /* background-color: antiquewhite; */
 }
 li {
   list-style-type: none;
@@ -110,13 +118,7 @@ nav li {
   margin-right: 10px;
 }
 
-#fav-list {
-  text-align: left;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-  padding: 40px;
-}
+
 
 h3 {
   display: inline;
