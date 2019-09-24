@@ -1,7 +1,7 @@
 <template>
 
   <div class="grid">
-    <li> {{favourite.name}} </li>
+    <li v-on:click="handleClick"> {{favourite.name}} </li>
     <img :src="favourite.pics[0].url" height="50">
   <li>
       <button v-on:click="removeFavourite">Remove Favourite</button>
@@ -14,11 +14,14 @@ import {eventBus} from '../main'
 
 export default {
 props: ["favourite"],
-       
+
   methods: {
       removeFavourite: function(){
           eventBus.$emit("favourite-removed", this.favourite._id)
       },
+      handleClick(){
+          eventBus.$emit('dinosaur-selected', this.favourite.name)
+      }
   }
 }
 
