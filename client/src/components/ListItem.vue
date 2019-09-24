@@ -8,13 +8,13 @@
 import {eventBus} from '../main'
 
 export default {
-   name: "list-item",
-   props: ['dinosaur'],
-   methods: {
-       handleClick(){
-           eventBus.$emit('dinosaur-selected', this.dinosaur)
-       }
-   }
+  name: "list-item",
+  props: ['dinosaur'],
+  methods: {
+    handleClick(){
+      eventBus.$emit('dinosaur-selected', this.dinosaur)
+    }
+  }
 }
 </script>
 

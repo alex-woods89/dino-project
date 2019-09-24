@@ -8,7 +8,7 @@
           <li> <a href="#build-your-dino">Build Your Dino</a></li>
         </ul>
       </nav>
-      
+
       <br>
       <br>
 
@@ -18,6 +18,7 @@
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
     <br>
     <dinosaur-list id="dino-list" :dinosaurs="filteredDinosaurs"></dinosaur-list>
+    <br>
     <build-your-dino id="build-your-dino"></build-your-dino>
   </div>
 </template>
@@ -32,28 +33,28 @@ import {eventBus} from './main'
 
 export default {
   name: "app",
-   data(){
-     return {
-       favourites: [],
-       selectedDinosaur: null,
-       dinosaurs: [],
-       searchTerm: ""
-     }
-   },
-   components: {
-     "dinosaur-list": DinoList,
-     "favourite-list": FavouriteList,
-     "dino-detail": DinoDetail,
-     "build-your-dino": BuildYourDino
-   },
-   computed: {
-     filteredDinosaurs: function () {
-       if (!this.searchTerm.length) return this.dinosaurs;
-       return this.dinosaurs
-       .filter(dinosaur => dinosaur.toLowerCase()
-       .includes(this.searchTerm.toLowerCase()));
-     }
-   },
+    data(){
+      return {
+        favourites: [],
+        selectedDinosaur: null,
+        dinosaurs: [],
+        searchTerm: ""
+      }
+    },
+    components: {
+      "dinosaur-list": DinoList,
+      "favourite-list": FavouriteList,
+      "dino-detail": DinoDetail,
+      "build-your-dino": BuildYourDino
+    },
+    computed: {
+      filteredDinosaurs: function () {
+        if (!this.searchTerm.length) return this.dinosaurs;
+        return this.dinosaurs
+        .filter(dinosaur => dinosaur.toLowerCase()
+        .includes(this.searchTerm.toLowerCase()));
+      }
+    },
     mounted(){
       fetch('http://localhost:3000/api/dinosaurs')
       .then(res => res.json())
@@ -114,7 +115,8 @@ export default {
   color:white;
   background-color: rgba(255, 255, 255, 0.3);
   background-image: url("../public/dino-background-copy.jpg");
-   background-attachment: fixed;
+  background-size: 100%;
+  background-attachment: fixed;
   /* background-color: antiquewhite; */
 }
 li {
@@ -124,10 +126,10 @@ li {
 nav li {
   display: inline;
   margin-right: 10px;
-   background-color: #ffad33;
+  background-color: #ffad33;
   box-shadow: 3px 3px #888;
   border-radius: 10px;
-  color: white
+  color: white;
 }
 
 a {
@@ -136,8 +138,7 @@ a {
 
 h1 {
   display: inline;
-  
-  font-size: 400%
+  font-size: 400%;
 }
 
 #dino-list {
