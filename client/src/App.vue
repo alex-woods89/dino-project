@@ -22,6 +22,9 @@
     <h2>Build Your Dino</h2>
     <br>
     <build-your-dino id="build-your-dino"></build-your-dino>
+    <footer>
+       <a href="#">Back to top</a>
+    </footer>
   </div>
 </template>
 
@@ -106,44 +109,52 @@ export default {
     }
   }
 
-  </script>
+</script>
 
-  <style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color:white;
-    background-color: rgba(255, 255, 255, 0.3);
-    background-image: url("../public/dino-background-copy.jpg");
-    background-size: 100%;
-    background-attachment: fixed;
-    /* background-color: antiquewhite; */
-  }
-  li {
-    list-style-type: none;
-  }
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color:white;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-image: url("../public/dino-background-copy.jpg");
+  background-size: 100%;
+  background-attachment: fixed;
+  /* background-color: antiquewhite; */
+}
+li {
+  list-style-type: none;
+}
 
-  nav li {
-    display: inline;
-    margin-right: 10px;
-    background-color: #ffad33;
-    box-shadow: 3px 3px #888;
-    border-radius: 10px;
-    color: white;
-  }
+nav li {
+  display: inline;
+  margin-right: 10px;
+  background-color: #ffad33;
+  box-shadow: 3px 3px #888;
+  border-radius: 10px;
+  color: white;
+}
 
-  a {
-    text-decoration: none;
-  }
+a {
+  text-decoration: none;
+}
 
-  h1 {
-    display: inline;
-    font-size: 400%;
-  }
+h1 {
+  display: inline;
+  font-size: 400%;
+}
 
-  #dino-list {
-    margin-top: 50px;
-  }
-  </style>
+#dino-list {
+  margin-top: 50px;
+}
+
+footer {
+  background-color: #ffad33;
+
+}
+body {
+  margin: 0px;
+}
+</style>
