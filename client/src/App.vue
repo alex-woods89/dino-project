@@ -168,7 +168,7 @@ footer a {
 }
 
 nav a {
-  color: white;
+  color: black;
 
 }
 body {
