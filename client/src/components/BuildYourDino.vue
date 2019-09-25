@@ -87,6 +87,7 @@
       </form>
     </div>
     <div class="story">
+      <h2>The story of {{name}}</h2>
       <p>{{name}} is a {{color}} dinosaur.</p>
       <p>{{name}} is {{selected}} than a HOUSE and lives in a {{live}}.</p>
       <p>{{name}}  can {{picked}} and likes to eat {{food}}.</p>
@@ -130,6 +131,10 @@ export default {
     width: 30%;
     padding: 20px;
     margin-top: 40px;
+  }
+
+  .story h2 {
+    font-size: 150%;
   }
 
   .form {
