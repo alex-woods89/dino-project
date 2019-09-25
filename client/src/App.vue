@@ -23,7 +23,7 @@
     <br>
     <build-your-dino id="build-your-dino"></build-your-dino>
     <footer>
-       <a href="#">Back to top</a>
+      <a href="#">Back to top</a>
     </footer>
   </div>
 </template>
@@ -109,69 +109,70 @@ export default {
     }
   }
 
-</script>
+  </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color:white;
-  background-color: rgba(255, 255, 255, 0.3);
-  background-image: url("../public/dino-background-copy.jpg");
-  background-size: 100%;
-  background-attachment: fixed;
-  /* background-color: antiquewhite; */
-}
-li {
-  list-style-type: none;
-}
+  <style>
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color:white;
+    background-color: rgba(255, 255, 255, 0.3);
+    background-image: url("../public/dino-background-copy.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+    /* background-color: antiquewhite; */
+  }
+  li {
+    list-style-type: none;
+  }
 
-nav li {
-  display: inline;
-  margin-right: 25px;
-  background-color: #ffad33;
-  box-shadow: 3px 3px #888;
-  border-radius: 10px;
-  color: white;
-}
+  nav li {
+    display: inline;
+    margin-right: 25px;
+    background-color: #ffad33;
+    box-shadow: 3px 3px #888;
+    border-radius: 10px;
+    color: white;
+  }
 
-nav ul {
-  margin-top: 40px;
-}
+  nav ul {
+    margin-top: 40px;
+  }
 
-a {
-  text-decoration: none;
-}
+  a {
+    text-decoration: none;
+  }
 
-h1 {
-  display: inline;
-  font-size: 400%;
-}
+  h1 {
+    display: inline;
+    font-size: 400%;
+  }
 
-#dino-list {
-  margin-top: 50px;
-}
+  #dino-list {
+    margin-top: 50px;
+  }
 
-footer {
-  background-color: #ffad33;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-top: 40px;
+  footer {
+    background-color: #ffad33;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 40px;
 
-}
+  }
 
-footer a {
-  font-size: 27px;
-  color: black;
-}
+  footer a {
+    font-size: 27px;
+    color: black;
+  }
 
-nav a {
-  color: black;
+  nav a {
+    color: black;
 
-}
-body {
-  margin: 0px;
-}
-</style>
+  }
+  body {
+    margin: 0px;
+    cursor: url('http://cur.cursors-4u.net/nature/nat-9/nat816.cur'), auto;
+  }
+  </style>

@@ -37,7 +37,8 @@ button {
   box-shadow: 3px 3px #888;
   border-radius: 10px;
   color: white;
-  font-size: 125%
+  font-size: 125%;
+  cursor: pointer;
 }
 
 .favourite-item {
@@ -46,5 +47,6 @@ button {
   justify-content: space-evenly;
   margin-top: 20px;
   font-size: 150%;
+  cursor: pointer;
 }
 </style>
