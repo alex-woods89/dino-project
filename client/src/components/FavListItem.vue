@@ -1,11 +1,11 @@
 <template>
 
   <div class="favourite-item">
-    <li v-on:click="handleClick"> {{favourite.name}} </li>
+    <li v-on:click="handleClick"><a href="#dino-detail">{{favourite.name}}</a> </li>
     <img :src="favourite.pics[0].url" height="50">
-  <li>
+    <li>
       <button v-on:click="removeFavourite">Delete Favourite</button>
-  </li>
+    </li>
   </div>
 </template>
 
@@ -13,15 +13,15 @@
 import {eventBus} from '../main'
 
 export default {
-props: ["favourite"],
+  props: ["favourite"],
 
   methods: {
-      removeFavourite: function(){
-          eventBus.$emit("favourite-removed", this.favourite._id)
-      },
-      handleClick(){
-          eventBus.$emit('dinosaur-selected', this.favourite.name)
-      }
+    removeFavourite: function(){
+      eventBus.$emit("favourite-removed", this.favourite._id)
+    },
+    handleClick(){
+      eventBus.$emit('dinosaur-selected', this.favourite.name)
+    }
   }
 }
 
@@ -48,5 +48,9 @@ button {
   margin-top: 20px;
   font-size: 150%;
   cursor: pointer;
+}
+
+.favourite-item a {
+  color: #fff;
 }
 </style>
