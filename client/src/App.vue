@@ -150,7 +150,15 @@ h1 {
 
 footer {
   background-color: #ffad33;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 40px;
 
+}
+
+footer a {
+  font-size: 27px;
+  color: black;
 }
 body {
   margin: 0px;
