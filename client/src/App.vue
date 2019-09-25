@@ -15,10 +15,11 @@
     <br>
 
     <br>
-    <dino-detail id="dino-detail" v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
-    <br>
+
     <dinosaur-list id="dino-list" :dinosaurs="filteredDinosaurs"></dinosaur-list>
     <br>
+    <dino-detail id="dino-detail" v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
+  <br>
     <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
     <br>
     <h2>Build Your Dino</h2>
@@ -121,7 +122,6 @@ export default {
       background-image: url("../public/dino-background-copy.jpg");
       background-size: 100%;
       background-attachment: fixed;
-      /* background-color: antiquewhite; */
     }
     li {
       list-style-type: none;
@@ -164,7 +164,7 @@ export default {
     }
 
     #dino-list {
-      margin-top: 50px;
+      padding-top: 400px;
     }
 
     footer {
