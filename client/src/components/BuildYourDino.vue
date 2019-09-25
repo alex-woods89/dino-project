@@ -17,7 +17,7 @@
 
         <div class="form-row">
           <div class="form-col">
-            <label for="dino-color">What's your Dino's Colour</label>
+            <label for="dino-color">What colour is {{name}}?</label>
           </div>
           <div class="form-col">
             <select class="" v-model="color">
@@ -33,7 +33,7 @@
         <br>
 
         <div class="form-row">
-          <label >Is your Dino bigger than a house?  </label>
+          <label >Is {{name}} bigger than a house?</label>
           <label for="dino-house">Yes</label>
           <input type="radio" id = "yes" name="house" value="bigger" v-model="selected">
           <label for="dino-house">No</label>
@@ -44,7 +44,7 @@
 
         <div class="form-row">
           <div class="form-col">
-            <label for="dino-live">Where is Your Dino's Home</label>
+            <label for="dino-live">Where does {{name}} live?</label>
           </div>
           <div class="form-col">
             <select v-model="live">
@@ -60,7 +60,7 @@
         <br>
 
         <div class="form-row">
-          <label >Can your Dino fly?   </label>
+          <label >Can {{name}} fly?</label>
           <label for="dino-fly">Yes</label>
           <input type="radio" id = "yes" name="fly" value="fly" v-model="picked">
           <label for="dino-fly">No</label>
@@ -71,7 +71,7 @@
 
         <div class="form-row">
           <div class="form-col">
-            <label for="dino-food">What does your Dino eat?</label>
+            <label for="dino-food">What does {{name}} eat?</label>
           </div>
           <div class="form-col">
             <select v-model="food">
