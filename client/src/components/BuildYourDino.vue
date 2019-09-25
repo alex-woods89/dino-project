@@ -87,7 +87,7 @@
       </form>
     </div>
     <div class="story">
-      <h2>The story of {{name}}</h2>
+      <h2>The Story of {{name}}</h2>
       <p>{{name}} is a {{color}} dinosaur.</p>
       <p>{{name}} is {{selected}} than a HOUSE and lives in a {{live}}.</p>
       <p>{{name}}  can {{picked}} and likes to eat {{food}}.</p>
@@ -125,7 +125,8 @@ export default {
   .div-wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: center
+    justify-content: center;
+    padding-bottom: 100px;
   }
   .story {
     width: 30%;
