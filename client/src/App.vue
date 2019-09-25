@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <h1>Apposaurus</h1>
+
     <nav>
+
       <ul>
+        <h1>Apposaurus</h1>
         <li><a href="#dino-list">Explore Dinos</a></li>
         <li> <a href="#fav-list">Favourite Dinos</a></li>
         <li> <a href="#build-your-dino">Build Your Dino</a></li>
@@ -13,18 +15,15 @@
     <br>
 
     <br>
-    <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
-    <br>
-    <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
+    <dino-detail id="dino-detail" v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
     <br>
     <dinosaur-list id="dino-list" :dinosaurs="filteredDinosaurs"></dinosaur-list>
+    <br>
+    <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
     <br>
     <h2>Build Your Dino</h2>
     <br>
     <build-your-dino id="build-your-dino"></build-your-dino>
-    <footer>
-      <a href="#">Back to top</a>
-    </footer>
   </div>
 </template>
 
@@ -112,67 +111,81 @@ export default {
   </script>
 
   <style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color:white;
-    background-color: rgba(255, 255, 255, 0.3);
-    background-image: url("../public/dino-background-copy.jpg");
-    background-size: 100%;
-    background-attachment: fixed;
-    /* background-color: antiquewhite; */
-  }
-  li {
-    list-style-type: none;
-  }
+    #app {
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color:white;
+      background-color: rgba(255, 255, 255, 0.3);
+      background-image: url("../public/dino-background-copy.jpg");
+      background-size: 100%;
+      background-attachment: fixed;
+      /* background-color: antiquewhite; */
+    }
+    li {
+      list-style-type: none;
+    }
 
-  nav li {
-    display: inline;
-    margin-right: 25px;
-    background-color: #ffad33;
-    box-shadow: 3px 3px #888;
-    border-radius: 10px;
-    color: white;
-  }
+    nav {
+      position: fixed;
+      background-color: rgb(49, 86, 71);
+      width: 100%;
+      top: 0;
 
-  nav ul {
-    margin-top: 40px;
-  }
 
-  a {
-    text-decoration: none;
-  }
+    }
 
-  h1 {
-    display: inline;
-    font-size: 400%;
-  }
+    nav li {
+      display: inline;
+      margin-right: 25px;
+      background-color: #ffad33;
+      box-shadow: 3px 3px #888;
+      border-radius: 10px;
+      color: white;
+    }
 
-  #dino-list {
-    margin-top: 50px;
-  }
+    #dino-detail {
+      margin-top: 120px;
+    }
 
-  footer {
-    background-color: #ffad33;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: 40px;
+    nav ul {
+      margin-top: 20px;
+    }
 
-  }
+    a {
+      text-decoration: none;
+    }
 
-  footer a {
-    font-size: 27px;
-    color: black;
-  }
+    h1 {
+      display: inline;
+      font-size: 400%;
+      padding-right:100px;
+    }
 
-  nav a {
-    color: black;
+    #dino-list {
+      margin-top: 50px;
+    }
 
-  }
-  body {
-    margin: 0px;
-    cursor: url('http://cur.cursors-4u.net/nature/nat-9/nat816.cur'), auto;
-  }
+    footer {
+      background-color: #ffad33;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin-top: 40px;
+
+    }
+
+    footer a {
+      font-size: 27px;
+      color: black;
+    }
+
+    nav a {
+      color: black;
+
+    }
+    body {
+      margin: 0px;
+      cursor: url('http://cur.cursors-4u.net/nature/nat-9/nat816.cur'), auto;
+    }
   </style>

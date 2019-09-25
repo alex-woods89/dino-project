@@ -1,6 +1,6 @@
 <template>
   <div class="grid-item">
-    <h3 v-on:click="handleClick">{{dinosaur}}</h3>
+    <h3  v-on:click="handleClick"><a href="#dino-detail">{{dinosaur}}</a></h3>
   </div>
 </template>
 
