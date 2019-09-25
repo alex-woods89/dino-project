@@ -90,7 +90,7 @@
       <p>{{name}} is a {{color}} dinosaur.</p>
       <p>{{name}} is {{selected}} than a HOUSE and lives in a {{live}}.</p>
       <p>{{name}}  can {{picked}} and likes to eat {{food}}.</p>
-      <p>We luv {{name}} the dinosaur.</p>
+      <p><strong>We luv {{name}} the dinosaur.</strong></p>
       </p>
     </div>
 
@@ -101,12 +101,12 @@ export default {
   name: 'build-your-dino',
   data(){
     return {
-      name: "",
-      food: "",
-      live: "",
-      color: "",
-      picked: "",
-      selected: ""
+      name: "Deeno",
+      food: "chocolate",
+      live: "village",
+      color: "pink",
+      picked: "can fly",
+      selected: "smaller"
 
     }
   }
