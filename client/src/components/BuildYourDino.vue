@@ -102,6 +102,8 @@
   </div>
 </template>
 <script>
+import UploadService from '../Services/UploadService';
+
 export default {
   name: 'build-your-dino',
   data(){
@@ -121,11 +123,12 @@ export default {
       this.selectedFile = event.target.files[0]
     },
     onUpload(){
-      DinoService.postUploadedPicture()
+      UploadService.postUploadedPic()
       .then(res => {
-        console.log(res);
+        this.selectedFile = res;
       })
     }
+
   }
 }
 

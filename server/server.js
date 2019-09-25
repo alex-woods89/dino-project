@@ -13,6 +13,14 @@ const createRouter = require('./helpers/create_router.js');
 MongoClient.connect('mongodb://localhost:27017')
   .then((client) => {
     const db = client.db('apposaurus');
+    const dinoUploadCollection = db.collection('upload_pics');
+    app.use('/api/upload_pics', createRouter(dinoUploadCollection));
+  })
+  .catch(console.error);
+
+MongoClient.connect('mongodb://localhost:27017')
+  .then((client) => {
+    const db = client.db('apposaurus');
     const dinoFavCollection = db.collection('fav_dinos');
     app.use('/api/fav_dinos', createRouter(dinoFavCollection));
   })
@@ -21,12 +29,10 @@ MongoClient.connect('mongodb://localhost:27017')
 app.use('/api/dinosaurs/:name', (req, res) => {
   console.log("in dino route");
   const name = req.params.name;
-  // const url = 'http://dinosaurpictures.org/api/dinosaur/Kol';
   const url = `http://dinosaurpictures.org/api/dinosaur/${name}`;
   fetch(url)
     .then(jsonData => jsonData.json())
     .then(data => res.json(data));
-    // .then(data => console.log(data));
 });
 
 app.use('/api/dinosaurs', (req, res) => {
