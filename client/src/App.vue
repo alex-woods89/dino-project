@@ -150,9 +150,9 @@ h1 {
 
 footer {
   background-color: #ffad33;
-  margin-bottom: -10px;
-}
-html {
 
+}
+body {
+  margin: 0px;
 }
 </style>
