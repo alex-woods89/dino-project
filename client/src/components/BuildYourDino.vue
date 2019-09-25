@@ -22,10 +22,10 @@
           <div class="form-col">
             <select class="" v-model="color">
               <option value="">Choose a Color</option>
-              <option value="Red">Red</option>
-              <option value="Green">Green</option>
-              <option value="Blue">Blue</option>
-              <option value="Yellow">Yellow</option>
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+              <option value="blue">Blue</option>
+              <option value="yellow">Yellow</option>
             </select>
           </div>
         </div>
@@ -49,10 +49,10 @@
           <div class="form-col">
             <select v-model="live">
               <option value="">Choose a Home</option>
-              <option value="Cave">Cave</option>
-              <option value="Forest">Forest</option>
-              <option value="Bunker">Bunker</option>
-              <option value="The Moon">The Moon</option>
+              <option value="cave">Cave</option>
+              <option value="forest">Forest</option>
+              <option value="bunker">Bunker</option>
+              <option value="van">Van</option>
             </select>
           </div>
         </div>
@@ -76,10 +76,10 @@
           <div class="form-col">
             <select v-model="food">
               <option value="">Choose a Food</option>
-              <option value="Vegetables">Vegetables</option>
-              <option value="Other Dinos">Other Dinos</option>
-              <option value="Ice Cream">Ice Cream</option>
-              <option value="Porridge">Porridge</option>
+              <option value="vegetables">Vegetables</option>
+              <option value="other dinos">Other Dinos</option>
+              <option value="ice cream">Ice Cream</option>
+              <option value="porridge">Porridge</option>
             </select>
           </div>
         </div>
