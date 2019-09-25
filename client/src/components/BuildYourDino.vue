@@ -116,7 +116,7 @@ export default {
 </script>
 <style lang="css" scoped>
   h2 {
-    font-size: 20px;
+    font-size: 150%;
   }
   .form-row {
     width: 100%;
