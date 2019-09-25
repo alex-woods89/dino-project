@@ -128,11 +128,15 @@ li {
 
 nav li {
   display: inline;
-  margin-right: 10px;
+  margin-right: 25px;
   background-color: #ffad33;
   box-shadow: 3px 3px #888;
   border-radius: 10px;
   color: white;
+}
+
+nav ul {
+  margin-top: 40px;
 }
 
 a {
@@ -159,6 +163,11 @@ footer {
 footer a {
   font-size: 27px;
   color: black;
+}
+
+nav a {
+  color: white;
+
 }
 body {
   margin: 0px;
