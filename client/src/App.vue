@@ -1,16 +1,16 @@
 <template>
   <div id="app">
     <h1>Apposaurus</h1>
-      <nav>
-        <ul>
-          <li><a href="#dino-list">Explore Dinos</a></li>
-          <li> <a href="#fav-list">Favourite Dinos</a></li>
-          <li> <a href="#build-your-dino">Build Your Dino</a></li>
-        </ul>
-      </nav>
+    <nav>
+      <ul>
+        <li><a href="#dino-list">Explore Dinos</a></li>
+        <li> <a href="#fav-list">Favourite Dinos</a></li>
+        <li> <a href="#build-your-dino">Build Your Dino</a></li>
+      </ul>
+    </nav>
 
-      <br>
-      <br>
+    <br>
+    <br>
 
     <br>
     <favourite-list id="fav-list" :favourites="favourites"></favourite-list>
@@ -18,6 +18,8 @@
     <dino-detail v-if="selectedDinosaur" :dinosaur="selectedDinosaur"></dino-detail>
     <br>
     <dinosaur-list id="dino-list" :dinosaurs="filteredDinosaurs"></dinosaur-list>
+    <br>
+    <h2>Build Your Dino</h2>
     <br>
     <build-your-dino id="build-your-dino"></build-your-dino>
     <footer>
@@ -36,73 +38,73 @@ import {eventBus} from './main'
 
 export default {
   name: "app",
-    data(){
-      return {
-        favourites: [],
-        selectedDinosaur: null,
-        dinosaurs: [],
-        searchTerm: ""
-      }
-    },
-    components: {
-      "dinosaur-list": DinoList,
-      "favourite-list": FavouriteList,
-      "dino-detail": DinoDetail,
-      "build-your-dino": BuildYourDino
-    },
-    computed: {
-      filteredDinosaurs: function () {
-        if (!this.searchTerm.length) return this.dinosaurs;
-        return this.dinosaurs
-        .filter(dinosaur => dinosaur.toLowerCase()
-        .includes(this.searchTerm.toLowerCase()));
-      }
-    },
-    mounted(){
-      fetch('http://localhost:3000/api/dinosaurs')
-      .then(res => res.json())
-      .then(dinosaurs => this.dinosaurs = dinosaurs);
+  data(){
+    return {
+      favourites: [],
+      selectedDinosaur: null,
+      dinosaurs: [],
+      searchTerm: ""
+    }
+  },
+  components: {
+    "dinosaur-list": DinoList,
+    "favourite-list": FavouriteList,
+    "dino-detail": DinoDetail,
+    "build-your-dino": BuildYourDino
+  },
+  computed: {
+    filteredDinosaurs: function () {
+      if (!this.searchTerm.length) return this.dinosaurs;
+      return this.dinosaurs
+      .filter(dinosaur => dinosaur.toLowerCase()
+      .includes(this.searchTerm.toLowerCase()));
+    }
+  },
+  mounted(){
+    fetch('http://localhost:3000/api/dinosaurs')
+    .then(res => res.json())
+    .then(dinosaurs => this.dinosaurs = dinosaurs);
 
-      eventBus.$on("favourite-removed", id => {
-        DinoService.deleteFavoriteDinosaur(id)
-        .then(() => {
-          const index = this.favourites.findIndex(favourite => favourite._id === id)
-          this.favourites.splice(index, 1)
+    eventBus.$on("favourite-removed", id => {
+      DinoService.deleteFavoriteDinosaur(id)
+      .then(() => {
+        const index = this.favourites.findIndex(favourite => favourite._id === id)
+        this.favourites.splice(index, 1)
 
-        })
       })
+    })
 
-      eventBus.$on("favourite-added", (favourite) => {
-        DinoService.postFavoriteDinosaur(favourite)
-        .then(resFavourite => {
-          this.favourites.push(resFavourite)
-        })
-      });
+    eventBus.$on("favourite-added", (favourite) => {
+      DinoService.postFavoriteDinosaur(favourite)
+      .then(resFavourite => {
+        this.favourites.push(resFavourite)
+      })
+    });
 
-      eventBus.$on('dinosaur-selected', dinosaur => this.displayDinoDetail(dinosaur));
+    eventBus.$on('dinosaur-selected', dinosaur => this.displayDinoDetail(dinosaur));
 
-      eventBus.$on('dino-searched', searchTerm => this.searchTerm = searchTerm)
+    eventBus.$on('dino-searched', searchTerm => this.searchTerm = searchTerm)
 
-      DinoService.getFavoriteDinosaurs()
-      .then(favourites => this.favourites = favourites);
+    DinoService.getFavoriteDinosaurs()
+    .then(favourites => this.favourites = favourites);
 
   },
-    methods: {
-      removeFavourite: function(dinosaur) {
-        const index = this.favourites.indexOf(dinosaur)
-        this.favourites.splice(index, 1)
-      },
-      isDinosaurAFavourite: function(dinosaur){
-        const idOfFavourites = (this.favourites.map(favourite => favourite.id))
-        return idOfFavourites.includes(dinosaur.id)
-      },
-      addFavourite: function(dinosaur){
-        this.favourites.push(dinosaur)
-      },
-      displayDinoDetail: function(dinosaurName){
-        fetch(`http://localhost:3000/api/dinosaurs/${dinosaurName}`)
-          .then(res => res.json())
-          .then(dinosaur => this.selectedDinosaur = dinosaur);
+  methods: {
+    removeFavourite: function(dinosaur) {
+      const index = this.favourites.indexOf(dinosaur)
+      this.favourites.splice(index, 1)
+    },
+    isDinosaurAFavourite: function(dinosaur){
+      const idOfFavourites = (this.favourites.map(favourite => favourite.id))
+      return idOfFavourites.includes(dinosaur.id)
+    },
+    addFavourite: function(dinosaur){
+      this.favourites.push(dinosaur)
+    },
+    displayDinoDetail: function(dinosaurName){
+      fetch(`http://localhost:3000/api/dinosaurs/${dinosaurName}`)
+        .then(res => res.json())
+        .then(dinosaur => this.selectedDinosaur = dinosaur);
       }
     }
   }

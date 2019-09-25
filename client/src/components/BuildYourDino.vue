@@ -2,7 +2,6 @@
 
   <div class="div-wrapper">
     <div>
-      <h2>Build Your Dino</h2>
       <form class="form">
         <div class="form-row">
           <div class="form-col">
@@ -17,15 +16,15 @@
 
         <div class="form-row">
           <div class="form-col">
-            <label for="dino-color">What's your Dino's Colour</label>
+            <label for="dino-color">What colour is {{name}}?</label>
           </div>
           <div class="form-col">
             <select class="" v-model="color">
               <option value="">Choose a Color</option>
-              <option value="Red">Red</option>
-              <option value="Green">Green</option>
-              <option value="Blue">Blue</option>
-              <option value="Yellow">Yellow</option>
+              <option value="red">Red</option>
+              <option value="green">Green</option>
+              <option value="blue">Blue</option>
+              <option value="yellow">Yellow</option>
             </select>
           </div>
         </div>
@@ -33,10 +32,10 @@
         <br>
 
         <div class="form-row">
-          <label >Is your Dino bigger than a house?  </label>
-          <label for="dino-house">Yes</label>
+          <label >Is {{name}} bigger than a house? </label>
+          <label for="dino-house"> Yes </label>
           <input type="radio" id = "yes" name="house" value="bigger" v-model="selected">
-          <label for="dino-house">No</label>
+          <label for="dino-house"> No </label>
           <input type="radio" id ="no" name="house" value="smaller" v-model="selected">
         </div>
 
@@ -44,15 +43,15 @@
 
         <div class="form-row">
           <div class="form-col">
-            <label for="dino-live">Where is Your Dino's Home</label>
+            <label for="dino-live">Where does {{name}} live?</label>
           </div>
           <div class="form-col">
             <select v-model="live">
               <option value="">Choose a Home</option>
-              <option value="Cave">Cave</option>
-              <option value="Forest">Forest</option>
-              <option value="Bunker">Bunker</option>
-              <option value="The Moon">The Moon</option>
+              <option value="cave">Cave</option>
+              <option value="forest">Forest</option>
+              <option value="bunker">Bunker</option>
+              <option value="van">Van</option>
             </select>
           </div>
         </div>
@@ -60,26 +59,26 @@
         <br>
 
         <div class="form-row">
-          <label >Can your Dino fly?   </label>
-          <label for="dino-fly">Yes</label>
-          <input type="radio" id = "yes" name="fly" value="fly" v-model="picked">
-          <label for="dino-fly">No</label>
-          <input type="radio" id ="no" name="fly" value="not fly" v-model="picked">
+          <label >Can {{name}} fly? </label>
+          <label for="dino-fly"> Yes </label>
+          <input type="radio" id = "yes" name="fly" value="can fly" v-model="picked">
+          <label for="dino-fly"> No </label>
+          <input type="radio" id ="no" name="fly" value="cannot fly" v-model="picked">
         </div>
 
         <br>
 
         <div class="form-row">
           <div class="form-col">
-            <label for="dino-food">What does your Dino eat?</label>
+            <label for="dino-food">What does {{name}} eat?</label>
           </div>
           <div class="form-col">
             <select v-model="food">
               <option value="">Choose a Food</option>
-              <option value="Vegetables">Vegetables</option>
-              <option value="Other Dinos">Other Dinos</option>
-              <option value="Ice Cream">Ice Cream</option>
-              <option value="Porridge">Porridge</option>
+              <option value="vegetables">Vegetables</option>
+              <option value="other dinos">Other Dinos</option>
+              <option value="ice cream">Ice Cream</option>
+              <option value="porridge">Porridge</option>
             </select>
           </div>
         </div>
@@ -87,26 +86,27 @@
       </form>
     </div>
     <div class="story">
-      <p>{{name}} is a {{color}} dinosaur.
-      {{name}} is {{selected}} than a HOUSE and lives in a {{live}}.
-      {{name}}  can {{picked}} and likes to eat {{food}}.
-      We luv {{name}} the dinosaur.
-      </p>
-    </div>
-
+      <h2>The Story of {{name}} the Dinosaur</h2>
+      <p>{{name}} is a {{color}} dinosaur.</p>
+      <p>{{name}} is {{selected}} than a house and lives in a {{live}}.</p>
+      <p>{{name}} {{picked}} and likes to eat {{food}} on Thursdays.</p>
+      <p><strong>We luv {{name}} the dinosaur.</strong></p>
+    </p>
   </div>
+
+</div>
 </template>
 <script>
 export default {
   name: 'build-your-dino',
   data(){
     return {
-      name: "",
-      food: "",
-      live: "",
-      color: "",
-      picked: "",
-      selected: ""
+      name: "Deeno",
+      food: "chocolate",
+      live: "village",
+      color: "pink",
+      picked: "cannot fly",
+      selected: "smaller"
 
     }
   }
@@ -114,35 +114,42 @@ export default {
 
 </script>
 <style lang="css" scoped>
-  h2 {
-    font-size: 20px;
-  }
-  .form-row {
-    width: 100%;
-  }
+dino-header {
+  width:100%;
+}
+h2 {
+  font-size: 150%;
+}
+.form-row {
+  width: 100%;
+}
 
-  .div-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center
-  }
-  .story {
-    width: 30%;
-    padding: 20px;
-    margin-top: 40px;
-  }
+.div-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+.story {
+  width: 30%;
+  padding: 20px;
+}
 
-  .form {
-    padding: 20px;
-  }
+.story h2 {
+  font-size: 150%;
+}
 
-  p{
-    font-size: 20px;
-  }
-  /* .form-col {
-    display: inline;
-  }
-  input, label {
-    width: 50%;
-  } */
+.form {
+  padding: 20px;
+}
+
+p{
+  font-size: 20px;
+}
+/* .form-col {
+display: inline;
+}
+input, label {
+width: 50%;
+} */
 </style>
