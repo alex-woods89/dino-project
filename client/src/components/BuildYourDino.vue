@@ -2,7 +2,6 @@
 
   <div class="div-wrapper">
     <div>
-      <h2>Build Your Dino</h2>
       <form class="form">
         <div class="form-row">
           <div class="form-col">
@@ -92,10 +91,10 @@
       <p>{{name}} is {{selected}} than a house and lives in a {{live}}.</p>
       <p>{{name}} {{picked}} and likes to eat {{food}} on Thursdays.</p>
       <p><strong>We luv {{name}} the dinosaur.</strong></p>
-      </p>
-    </div>
-
+    </p>
   </div>
+
+</div>
 </template>
 <script>
 export default {
@@ -115,40 +114,42 @@ export default {
 
 </script>
 <style lang="css" scoped>
-  h2 {
-    font-size: 150%;
-  }
-  .form-row {
-    width: 100%;
-  }
+dino-header {
+  width:100%;
+}
+h2 {
+  font-size: 150%;
+}
+.form-row {
+  width: 100%;
+}
 
-  .div-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 100px;
-  }
-  .story {
-    width: 30%;
-    padding: 20px;
-    margin-top: 40px;
-  }
+.div-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+.story {
+  width: 30%;
+  padding: 20px;
+}
 
-  .story h2 {
-    font-size: 150%;
-  }
+.story h2 {
+  font-size: 150%;
+}
 
-  .form {
-    padding: 20px;
-  }
+.form {
+  padding: 20px;
+}
 
-  p{
-    font-size: 20px;
-  }
-  /* .form-col {
-    display: inline;
-  }
-  input, label {
-    width: 50%;
-  } */
+p{
+  font-size: 20px;
+}
+/* .form-col {
+display: inline;
+}
+input, label {
+width: 50%;
+} */
 </style>
