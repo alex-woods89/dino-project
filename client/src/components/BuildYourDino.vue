@@ -62,9 +62,9 @@
         <div class="form-row">
           <label >Can {{name}} fly?</label>
           <label for="dino-fly">Yes</label>
-          <input type="radio" id = "yes" name="fly" value="fly" v-model="picked">
+          <input type="radio" id = "yes" name="fly" value="can fly" v-model="picked">
           <label for="dino-fly">No</label>
-          <input type="radio" id ="no" name="fly" value="not fly" v-model="picked">
+          <input type="radio" id ="no" name="fly" value="cannot fly" v-model="picked">
         </div>
 
         <br>
@@ -89,8 +89,8 @@
     <div class="story">
       <h2>The Story of {{name}}</h2>
       <p>{{name}} is a {{color}} dinosaur.</p>
-      <p>{{name}} is {{selected}} than a HOUSE and lives in a {{live}}.</p>
-      <p>{{name}}  can {{picked}} and likes to eat {{food}}.</p>
+      <p>{{name}} is {{selected}} than a house and lives in a {{live}}.</p>
+      <p>{{name}} {{picked}} and likes to eat {{food}} on Thursdays.</p>
       <p><strong>We luv {{name}} the dinosaur.</strong></p>
       </p>
     </div>
