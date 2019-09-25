@@ -37,8 +37,6 @@ app.use('/api/dinosaurs', (req, res) => {
     .then(data => res.json(data));
 });
 
-
-
 app.listen(3000, function() {
   console.log(`Dino server running on port ${this.address().port}`);
 });

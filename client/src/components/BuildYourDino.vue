@@ -84,6 +84,11 @@
           </div>
         </div>
 
+        <div class="">
+          <input type="file" @change="onFileSelected" name="" value="">
+          <button v-on:click="onUpload" type="button" name="button">Upload</button>
+        </div>
+
       </form>
     </div>
     <div class="story">
@@ -106,8 +111,20 @@ export default {
       live: "",
       color: "",
       picked: "",
-      selected: ""
-
+      selected: "",
+      selectedFile: null
+    }
+  },
+  methods: {
+    onFileSelected(event){
+      console.log(event);
+      this.selectedFile = event.target.files[0]
+    },
+    onUpload(){
+      DinoService.postUploadedPicture()
+      .then(res => {
+        console.log(res);
+      })
     }
   }
 }
