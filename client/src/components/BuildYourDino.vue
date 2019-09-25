@@ -33,10 +33,10 @@
         <br>
 
         <div class="form-row">
-          <label >Is {{name}} bigger than a house?</label>
-          <label for="dino-house">Yes</label>
+          <label >Is {{name}} bigger than a house? </label>
+          <label for="dino-house"> Yes </label>
           <input type="radio" id = "yes" name="house" value="bigger" v-model="selected">
-          <label for="dino-house">No</label>
+          <label for="dino-house"> No </label>
           <input type="radio" id ="no" name="house" value="smaller" v-model="selected">
         </div>
 
@@ -60,10 +60,10 @@
         <br>
 
         <div class="form-row">
-          <label >Can {{name}} fly?</label>
-          <label for="dino-fly">Yes</label>
+          <label >Can {{name}} fly? </label>
+          <label for="dino-fly"> Yes </label>
           <input type="radio" id = "yes" name="fly" value="can fly" v-model="picked">
-          <label for="dino-fly">No</label>
+          <label for="dino-fly"> No </label>
           <input type="radio" id ="no" name="fly" value="cannot fly" v-model="picked">
         </div>
 
@@ -87,7 +87,7 @@
       </form>
     </div>
     <div class="story">
-      <h2>The Story of {{name}}</h2>
+      <h2>The Story of {{name}} the Dinosaur</h2>
       <p>{{name}} is a {{color}} dinosaur.</p>
       <p>{{name}} is {{selected}} than a house and lives in a {{live}}.</p>
       <p>{{name}} {{picked}} and likes to eat {{food}} on Thursdays.</p>
@@ -106,7 +106,7 @@ export default {
       food: "chocolate",
       live: "village",
       color: "pink",
-      picked: "can fly",
+      picked: "cannot fly",
       selected: "smaller"
 
     }
