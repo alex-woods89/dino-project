@@ -20,6 +20,9 @@
     <dinosaur-list id="dino-list" :dinosaurs="filteredDinosaurs"></dinosaur-list>
     <br>
     <build-your-dino id="build-your-dino"></build-your-dino>
+    <footer>
+       <a href="#">Back to top</a>
+    </footer>
   </div>
 </template>
 
@@ -143,5 +146,13 @@ h1 {
 
 #dino-list {
   margin-top: 50px;
+}
+
+footer {
+  background-color: #ffad33;
+  margin-bottom: -10px;
+}
+html {
+
 }
 </style>
