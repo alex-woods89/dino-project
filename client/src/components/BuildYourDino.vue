@@ -87,10 +87,10 @@
       </form>
     </div>
     <div class="story">
-      <p>{{name}} is a {{color}} dinosaur.
-      {{name}} is {{selected}} than a HOUSE and lives in a {{live}}.
-      {{name}}  can {{picked}} and likes to eat {{food}}.
-      We luv {{name}} the dinosaur.
+      <p>{{name}} is a {{color}} dinosaur.</p>
+      <p>{{name}} is {{selected}} than a HOUSE and lives in a {{live}}.</p>
+      <p>{{name}}  can {{picked}} and likes to eat {{food}}.</p>
+      <p>We luv {{name}} the dinosaur.</p>
       </p>
     </div>
 
