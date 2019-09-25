@@ -15,16 +15,19 @@ MongoClient.connect('mongodb://localhost:27017')
     const db = client.db('apposaurus');
     const dinoUploadCollection = db.collection('upload_pics');
     app.use('/api/upload_pics', createRouter(dinoUploadCollection));
-  })
-  .catch(console.error);
-
-MongoClient.connect('mongodb://localhost:27017')
-  .then((client) => {
-    const db = client.db('apposaurus');
     const dinoFavCollection = db.collection('fav_dinos');
     app.use('/api/fav_dinos', createRouter(dinoFavCollection));
   })
   .catch(console.error);
+
+// MongoClient.connect('mongodb://localhost:27017')
+//   .then((client) => {
+//     console.log("second connect")
+//     const db = client.db('apposaurus');
+//     const dinoFavCollection = db.collection('fav_dinos');
+//     app.use('/api/fav_dinos', createRouter(dinoFavCollection));
+//   })
+//   .catch(console.error);
 
 app.use('/api/dinosaurs/:name', (req, res) => {
   console.log("in dino route");

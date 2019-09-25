@@ -97,6 +97,9 @@
       {{name}}  can {{picked}} and likes to eat {{food}}.
       We luv {{name}} the dinosaur.
       </p>
+
+      <img src="" alt="">
+
     </div>
 
   </div>
@@ -119,15 +122,16 @@ export default {
   },
   methods: {
     onFileSelected(event){
-      console.log(event);
+      console.log(event.target.files[0]);
       this.selectedFile = event.target.files[0]
     },
     onUpload(){
-      UploadService.postUploadedPic()
+      UploadService.postUploadedPic(this.name)
       .then(res => {
-        this.selectedFile = res;
+        this.name = res;
       })
-    }
+    },
+
 
   }
 }
