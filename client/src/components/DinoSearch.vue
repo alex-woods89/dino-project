@@ -28,4 +28,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
+input
+{
+  font-size:20px;
+}
 </style>

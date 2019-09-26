@@ -4,8 +4,10 @@
       <dino-search></dino-search>
       <div class="grid">
           <list-item v-for="(dinosaur, index) in dinosaurs" :dinosaur="dinosaur" :key="index"></list-item>
+<p id="dino-detail"></p>
       </div>
   </div>
+
 </template>
 
 <script>

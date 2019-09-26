@@ -24,7 +24,7 @@
     <br>
     <h2>Build Your Dino</h2>
     <br>
-    <build-your-dino id="build-your-dino"></build-your-dino>
+    <build-your-dino></build-your-dino>
   </div>
 </template>
 
@@ -70,7 +70,6 @@ export default {
       .then(() => {
         const index = this.favourites.findIndex(favourite => favourite._id === id)
         this.favourites.splice(index, 1)
-
       })
     })
 
@@ -127,6 +126,11 @@ export default {
       list-style-type: none;
     }
 
+    #fav-list {
+
+      padding-top:120px;
+    }
+
     nav {
       position: fixed;
       background-color: rgb(49, 86, 71);
@@ -146,7 +150,7 @@ export default {
     }
 
     #dino-detail {
-      margin-top: 120px;
+      margin-top: 100px;
     }
 
     nav ul {
@@ -164,7 +168,7 @@ export default {
     }
 
     #dino-list {
-      padding-top: 400px;
+      padding-top: 100px;
     }
 
     footer {
